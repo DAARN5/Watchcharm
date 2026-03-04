@@ -1,0 +1,239 @@
+.title-catalog {
+  font-family: var(--semibold-font);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #0c0c0c;
+  margin-bottom: 24px;
+}
+
+.catalog-list {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+.catalog-item {
+  border: 1px solid rgba(12, 12, 12, 0.05);
+  border-radius: 30px;
+  width: 100%;
+  background: #f3f3f3;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: left;
+  padding: 24px 28px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  min-height: 364px;
+}
+
+.catalog-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.catalog-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.catalog-images {
+  width: 208px;
+  height: 226px;
+  object-fit: contain;
+}
+
+.catalog-subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  color: #0c0c0c;
+  margin-bottom: 8px;
+}
+
+.catalog-text {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .catalog-item.hidden {
+    display: none;
+  }
+}
+
+.show-more-btn {
+  display: block;
+  margin: 0 auto;
+
+  padding: 15px 44px;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  background: #3350e9;
+  color: #fbfbfb;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+.show-more-btn:hover,
+.show-more-btn:focus {
+  background-color: #1f3cd4;
+}
+@media screen and (min-width: 768px) {
+  .title-catalog {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 92%;
+    letter-spacing: -0.02em;
+    color: #0c0c0c;
+    margin: 0 0 40px 0;
+  }
+
+  .catalog-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    row-gap: 32px;
+  }
+
+  .catalog-item {
+    width: calc((100% - 16px) / 2);
+    border: 1px solid rgba(12, 12, 12, 0.05);
+    border-radius: 30px;
+    justify-content: start;
+    background: #f3f3f3;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 24px 32px;
+    max-width: 344px;
+    min-height: 414px;
+  }
+
+  .catalog-item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .catalog-div {
+    width: 280px;
+    height: 312px;
+    padding: 10px 6px;
+  }
+
+  .catalog-images {
+    width: 268px;
+    height: 292px;
+    display: block;
+    object-fit: contain;
+    padding: 0;
+  }
+
+  .catalog-subtitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #0c0c0c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .catalog-text {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .catalog-item.hidden {
+    display: flex;
+  }
+
+  .show-more-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog-list {
+    gap: 23px;
+    row-gap: 32px;
+  }
+
+  .catalog-item {
+    width: calc((100% - 46px) / 3);
+    height: 414px;
+    max-width: 368px;
+  }
+}
+
+/* Flip card */
+
+.flip {
+  position: relative;
+  > .front {
+    display: block;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 2s;
+    transition-property: transform, opacity;
+  }
+
+  > .back {
+    display: flex;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 2s;
+    transition-property: transform, opacity;
+  }
+  > .front {
+    transform: rotateY(0deg);
+  }
+  > .back {
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-180deg);
+  }
+  &:hover {
+    > .front {
+      opacity: 0;
+      transform: rotateY(180deg);
+    }
+    > .back {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-text {
+  color: var(--text-color);
+  font-size: 20px;
+}
