@@ -1,11 +1,11 @@
 {
-  "name": "duzhe-seriozna-komanda",
+  "name": "Watchcharm",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/duzhe-seriozna-komanda/",
+    "build": "vite build --base=/Watchcharm/",
     "preview": "vite preview"
   },
   "devDependencies": {
